@@ -12,6 +12,7 @@
 
 @property (nonatomic, assign) Mat *meanImage;
 @property (nonatomic, assign) int frameCount;
+@property (nonatomic, assign) float recentArea, x, y;
 
 @end
 
@@ -40,6 +41,12 @@
 
 #ifdef __cplusplus
 
+struct allContoursComparitor {
+    bool operator ()(vector<cv::Point> const& a, vector<cv::Point> const& b) const {
+        return contourArea(a) > contourArea(b);
+    }
+};
+
 - (void)processImage:(Mat&)origImage{
     //correct image
     cv::Mat image(origImage.rows, origImage.cols, origImage.type());
@@ -56,22 +63,23 @@
     image -= *_meanImage;
     
     //TODO: use ML for threshold value
-    threshold(image, image, 50.0, 255.0, CV_THRESH_BINARY);
+    threshold(image, image, 30.0, 255.0, CV_THRESH_BINARY);
     
     //morphological operators
-    dilate(image, image, Mat(5,5, CV_8U));
-    erode(image, image, Mat(3,3, CV_8U));
+    dilate(image, image, Mat(3,3, CV_8U));
+    erode(image, image, Mat(7,7, CV_8U));
     
+    Canny(image, image, 100, 200);
+    
+
     vector<vector<cv::Point>>allContours;
     findContours(image, allContours, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
-    image = Mat::zeros(image.rows, image.cols, image.type());
     
+    image = Mat::zeros(image.rows, image.cols, image.type());
+
     //qualify contours based on circular size to area
-    if(allContours.size()){
+    if(allContours.size() > 5){
         float THRESHOLD_PERC = 0.6;
-        
-        
-        
         for(int i = 0; i < allContours.size(); i++){
             //circle area
             Point2f center;
@@ -87,44 +95,49 @@
                 circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
                 allContours.erase(allContours.begin() + i);
                 i--;
-                
+            }
+            
+        }
+        dilate(image, image, Mat(3,3, CV_8U));
+        
+        findContours(image, allContours, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
+        
+        image = Mat::zeros(image.rows, image.cols, image.type());
+        if(allContours.size()){
+            
+            
+            sort(allContours.begin(), allContours.end(), allContoursComparitor());
+            Point2f center;
+            float radius;
+            minEnclosingCircle(allContours[0], center, radius);
+            //circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
+            
+            float circArea = M_PI * radius * radius;
+            if(self.frameCount > 10 && self.frameCount < 20){
+                self.recentArea = ((self.recentArea * (self.frameCount - 11)) + circArea)/(float)(self.frameCount - 10);   
+            }
+            
+            if(abs(circArea/self.recentArea) > 0.9){
+                circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
             }
         }
-        
-        //drawContours(image, allContours, -1, Scalar(255.0, 255.0, 255.0), CV_FILLED);
     }
     
-    
-//    
-//    //copy original image to workable image
-//  //  Mat image(origImage.rows, origImage.cols, origImage.type());
-//  //  origImage.copyTo(image);
-//    
-//    //correct image
-//    transpose(origImage, origImage);
-//    flip(origImage, origImage, 0);
-//    
-////    Mat newImage(origImage.rows,origImage.cols,origImage.type());
-////    
-////    //filter image
-////    cvtColor(origImage, newImage, CV_BGRA2GRAY);
-////    equalizeHist(newImage, newImage);
-////    blur(newImage, newImage, cv::Size(11,11));
-////    threshold(newImage, newImage, 20.0, 255.5, THRESH_BINARY_INV);
-////    erode(newImage, newImage, cv::Mat(3,5,CV_8U));
-////    Canny(newImage, newImage, 0, 40);
-////    
-////    //capture contours
-////    vector<vector<cv::Point>>allContours;
-////    vector<vector<cv::Point>>definedContours;
-////    findContours(newImage, allContours, CV_RETR_LIST, CV_CHAIN_APPROX_SIMPLE); 
-////    [self removeNoise:&allContours withThresh:15];
-////    
-////    //write to original image to display on iPhone
-// //  origImage.convertTo(origImage, CV_8U);
-//  //  image.copyTo(origImage);
+    self.frameCount++;
+    if(self.frameCount > 5000){
+        self.frameCount = 50;
+    }
     image.copyTo(origImage);
     
+}
+
+void findGreatestAreaContour(vector<vector<cv::Point>> contours, int &idx){
+    float maxArea = contourArea(contours[0]);
+    for (int i = 1; i < contours.size(); i++) {
+        if(contourArea(contours[i]) > maxArea){
+            idx = i;
+        }
+    }
 }
 
 //convert a 3-channel matrix to a specified single channel matrix

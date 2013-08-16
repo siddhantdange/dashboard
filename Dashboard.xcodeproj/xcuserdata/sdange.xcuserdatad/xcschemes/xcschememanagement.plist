@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>fakepoints.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>56E83B5217BE1A2F00A9D326</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9CE1EE9117BDFC8E003153B8</key>
 		<dict>
 			<key>primary</key>
