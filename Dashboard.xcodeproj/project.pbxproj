@@ -20,6 +20,9 @@
 		56E83B6517BE320500A9D326 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B6417BE320500A9D326 /* Networking.m */; };
 		56E83B6617BE320500A9D326 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B6417BE320500A9D326 /* Networking.m */; };
 		56E83B6717BE320500A9D326 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B6417BE320500A9D326 /* Networking.m */; };
+		56F353B617BE75E2000991B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
+		56F353B917BE75E2000991B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F353B817BE75E2000991B9 /* main.m */; };
+		56F353BD17BE75E2000991B9 /* mouseserver.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56F353BC17BE75E2000991B9 /* mouseserver.1 */; };
 		9CE1EE9617BDFC8E003153B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
 		9CE1EE9817BDFC8E003153B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */; };
 		9CE1EE9A17BDFC8E003153B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9917BDFC8E003153B8 /* UIKit.framework */; };
@@ -64,11 +67,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		56F353B317BE75E2000991B9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				56F353BD17BE75E2000991B9 /* mouseserver.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5686717317BE54FA008D48DC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		5686717617BE5B05008D48DC /* fakedata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fakedata.csv; sourceTree = "<group>"; };
+		5686718117BE74E1008D48DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5686718417BE74E1008D48DC /* mouseserver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mouseserver-Prefix.pch"; sourceTree = "<group>"; };
+		5686718517BE74E1008D48DC /* mouseserver.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mouseserver.1; sourceTree = "<group>"; };
+		5686718A17BE7520008D48DC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		5686718C17BE7526008D48DC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		56E83B5317BE1A2F00A9D326 /* fakepoints */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fakepoints; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E83B5617BE1A2F00A9D326 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56E83B5917BE1A2F00A9D326 /* fakepoints-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fakepoints-Prefix.pch"; sourceTree = "<group>"; };
@@ -77,6 +95,10 @@
 		56E83B6117BE1B9100A9D326 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		56E83B6317BE320500A9D326 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		56E83B6417BE320500A9D326 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
+		56F353B517BE75E2000991B9 /* mouseserver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mouseserver; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F353B817BE75E2000991B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56F353BB17BE75E2000991B9 /* mouseserver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mouseserver-Prefix.pch"; sourceTree = "<group>"; };
+		56F353BC17BE75E2000991B9 /* mouseserver.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = mouseserver.1; sourceTree = "<group>"; };
 		9CE1EE9217BDFC8E003153B8 /* Dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE1EE9517BDFC8E003153B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,6 +138,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56F353B217BE75E2000991B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F353B617BE75E2000991B9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CE1EE8F17BDFC8E003153B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +178,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5686718017BE74E1008D48DC /* mouseserver */ = {
+			isa = PBXGroup;
+			children = (
+				5686718117BE74E1008D48DC /* main.m */,
+				5686718517BE74E1008D48DC /* mouseserver.1 */,
+				5686718317BE74E1008D48DC /* Supporting Files */,
+			);
+			path = mouseserver;
+			sourceTree = "<group>";
+		};
+		5686718317BE74E1008D48DC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5686718417BE74E1008D48DC /* mouseserver-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		56E83B5517BE1A2F00A9D326 /* fakepoints */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,12 +216,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		56F353B717BE75E2000991B9 /* mouseserver */ = {
+			isa = PBXGroup;
+			children = (
+				56F353B817BE75E2000991B9 /* main.m */,
+				56F353BC17BE75E2000991B9 /* mouseserver.1 */,
+				56F353BA17BE75E2000991B9 /* Supporting Files */,
+			);
+			path = mouseserver;
+			sourceTree = "<group>";
+		};
+		56F353BA17BE75E2000991B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56F353BB17BE75E2000991B9 /* mouseserver-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		9CE1EE8917BDFC8E003153B8 = {
 			isa = PBXGroup;
 			children = (
 				9CE1EE9B17BDFC8E003153B8 /* Dashboard */,
 				9CE1EEBA17BDFC8E003153B8 /* DashboardTests */,
 				56E83B5517BE1A2F00A9D326 /* fakepoints */,
+				5686718017BE74E1008D48DC /* mouseserver */,
+				56F353B717BE75E2000991B9 /* mouseserver */,
 				9CE1EE9417BDFC8E003153B8 /* Frameworks */,
 				9CE1EE9317BDFC8E003153B8 /* Products */,
 			);
@@ -185,6 +253,7 @@
 				9CE1EE9217BDFC8E003153B8 /* Dashboard.app */,
 				9CE1EEB317BDFC8E003153B8 /* DashboardTests.xctest */,
 				56E83B5317BE1A2F00A9D326 /* fakepoints */,
+				56F353B517BE75E2000991B9 /* mouseserver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +261,8 @@
 		9CE1EE9417BDFC8E003153B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5686718C17BE7526008D48DC /* CoreFoundation.framework */,
+				5686718A17BE7520008D48DC /* CoreGraphics.framework */,
 				9CE1EECE17BE0A4C003153B8 /* Accelerate.framework */,
 				9CE1EECF17BE0A4C003153B8 /* AssetsLibrary.framework */,
 				9CE1EED017BE0A4C003153B8 /* AVFoundation.framework */,
@@ -290,6 +361,23 @@
 			productReference = 56E83B5317BE1A2F00A9D326 /* fakepoints */;
 			productType = "com.apple.product-type.tool";
 		};
+		56F353B417BE75E2000991B9 /* mouseserver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56F353BE17BE75E2000991B9 /* Build configuration list for PBXNativeTarget "mouseserver" */;
+			buildPhases = (
+				56F353B117BE75E2000991B9 /* Sources */,
+				56F353B217BE75E2000991B9 /* Frameworks */,
+				56F353B317BE75E2000991B9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mouseserver;
+			productName = mouseserver;
+			productReference = 56F353B517BE75E2000991B9 /* mouseserver */;
+			productType = "com.apple.product-type.tool";
+		};
 		9CE1EE9117BDFC8E003153B8 /* Dashboard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CE1EEC417BDFC8E003153B8 /* Build configuration list for PBXNativeTarget "Dashboard" */;
@@ -355,6 +443,7 @@
 				9CE1EE9117BDFC8E003153B8 /* Dashboard */,
 				9CE1EEB217BDFC8E003153B8 /* DashboardTests */,
 				56E83B5217BE1A2F00A9D326 /* fakepoints */,
+				56F353B417BE75E2000991B9 /* mouseserver */,
 			);
 		};
 /* End PBXProject section */
@@ -389,6 +478,14 @@
 			files = (
 				56E83B5717BE1A2F00A9D326 /* main.m in Sources */,
 				56E83B6717BE320500A9D326 /* Networking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F353B117BE75E2000991B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F353B917BE75E2000991B9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +576,39 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		56F353BF17BE75E2000991B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mouseserver/mouseserver-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		56F353C017BE75E2000991B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mouseserver/mouseserver-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -641,6 +771,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		56F353BE17BE75E2000991B9 /* Build configuration list for PBXNativeTarget "mouseserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56F353BF17BE75E2000991B9 /* Debug */,
+				56F353C017BE75E2000991B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		9CE1EE8D17BDFC8E003153B8 /* Build configuration list for PBXProject "Dashboard" */ = {
 			isa = XCConfigurationList;
