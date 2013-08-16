@@ -114,13 +114,21 @@ struct allContoursComparitor {
             float circArea = M_PI * radius * radius;
             if(self.frameCount > 10 && self.frameCount < 20){
                 self.recentArea = ((self.recentArea * (self.frameCount - 11)) + circArea)/(float)(self.frameCount - 10);
+                
+                if(self.frameCount == 19){
+                    self.x = center.x;
+                    
+                }
             }
             
-            if(abs(circArea/self.recentArea) > 0.9){
+            //match area and zone
+            if(abs(circArea/self.recentArea) > 0.9 && abs(center.x/self.x) > 0.6){
                 circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
                 
                 float percX =  (center.x - self.x)/center.x;
                 float percY = (center.y - self.y)/center.y;
+                
+                cout << "xPerc: " << percX << " yPerc: " << percY << endl;
                 
                 self.x = center.x;
                 self.y = center.y;
