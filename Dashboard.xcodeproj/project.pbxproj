@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5686717417BE54FA008D48DC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5686717317BE54FA008D48DC /* opencv2.framework */; };
+		5686717517BE54FA008D48DC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5686717317BE54FA008D48DC /* opencv2.framework */; };
+		5686717717BE5B05008D48DC /* fakedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5686717617BE5B05008D48DC /* fakedata.csv */; };
+		5686717817BE5B05008D48DC /* fakedata.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5686717617BE5B05008D48DC /* fakedata.csv */; };
+		5686717917BE5B36008D48DC /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEAB17BDFC8E003153B8 /* MainViewController.mm */; };
 		56E83B5417BE1A2F00A9D326 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
 		56E83B5717BE1A2F00A9D326 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B5617BE1A2F00A9D326 /* main.m */; };
 		56E83B5B17BE1A2F00A9D326 /* fakepoints.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56E83B5A17BE1A2F00A9D326 /* fakepoints.1 */; };
 		56E83B6017BE1B8C00A9D326 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E83B5F17BE1B8C00A9D326 /* CoreGraphics.framework */; };
 		56E83B6217BE1B9100A9D326 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E83B6117BE1B9100A9D326 /* CoreFoundation.framework */; };
+		56E83B6517BE320500A9D326 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B6417BE320500A9D326 /* Networking.m */; };
+		56E83B6617BE320500A9D326 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B6417BE320500A9D326 /* Networking.m */; };
+		56E83B6717BE320500A9D326 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B6417BE320500A9D326 /* Networking.m */; };
 		9CE1EE9617BDFC8E003153B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
 		9CE1EE9817BDFC8E003153B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */; };
 		9CE1EE9A17BDFC8E003153B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9917BDFC8E003153B8 /* UIKit.framework */; };
@@ -26,7 +34,6 @@
 		9CE1EEB717BDFC8E003153B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9917BDFC8E003153B8 /* UIKit.framework */; };
 		9CE1EEBF17BDFC8E003153B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CE1EEBD17BDFC8E003153B8 /* InfoPlist.strings */; };
 		9CE1EEC117BDFC8E003153B8 /* DashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEC017BDFC8E003153B8 /* DashboardTests.m */; };
-		9CE1EECB17BE0166003153B8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EECA17BE0166003153B8 /* opencv2.framework */; };
 		9CE1EED517BE0A4C003153B8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EECE17BE0A4C003153B8 /* Accelerate.framework */; };
 		9CE1EED617BE0A4C003153B8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EECF17BE0A4C003153B8 /* AssetsLibrary.framework */; };
 		9CE1EED717BE0A4C003153B8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EED017BE0A4C003153B8 /* AVFoundation.framework */; };
@@ -60,12 +67,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5686717317BE54FA008D48DC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		5686717617BE5B05008D48DC /* fakedata.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fakedata.csv; sourceTree = "<group>"; };
 		56E83B5317BE1A2F00A9D326 /* fakepoints */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fakepoints; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E83B5617BE1A2F00A9D326 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56E83B5917BE1A2F00A9D326 /* fakepoints-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fakepoints-Prefix.pch"; sourceTree = "<group>"; };
 		56E83B5A17BE1A2F00A9D326 /* fakepoints.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = fakepoints.1; sourceTree = "<group>"; };
 		56E83B5F17BE1B8C00A9D326 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		56E83B6117BE1B9100A9D326 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		56E83B6317BE320500A9D326 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		56E83B6417BE320500A9D326 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		9CE1EE9217BDFC8E003153B8 /* Dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE1EE9517BDFC8E003153B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,7 +96,6 @@
 		9CE1EEBC17BDFC8E003153B8 /* DashboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DashboardTests-Info.plist"; sourceTree = "<group>"; };
 		9CE1EEBE17BDFC8E003153B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CE1EEC017BDFC8E003153B8 /* DashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashboardTests.m; sourceTree = "<group>"; };
-		9CE1EECA17BE0166003153B8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		9CE1EECE17BE0A4C003153B8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		9CE1EECF17BE0A4C003153B8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		9CE1EED017BE0A4C003153B8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -120,7 +130,7 @@
 				9CE1EE9817BDFC8E003153B8 /* CoreGraphics.framework in Frameworks */,
 				9CE1EE9617BDFC8E003153B8 /* Foundation.framework in Frameworks */,
 				9CE1EE9A17BDFC8E003153B8 /* UIKit.framework in Frameworks */,
-				9CE1EECB17BE0166003153B8 /* opencv2.framework in Frameworks */,
+				5686717417BE54FA008D48DC /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +140,7 @@
 			files = (
 				9CE1EEB517BDFC8E003153B8 /* XCTest.framework in Frameworks */,
 				9CE1EEB717BDFC8E003153B8 /* UIKit.framework in Frameworks */,
+				5686717517BE54FA008D48DC /* opencv2.framework in Frameworks */,
 				9CE1EEB617BDFC8E003153B8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,9 +199,9 @@
 				9CE1EED217BE0A4C003153B8 /* CoreMedia.framework */,
 				9CE1EED317BE0A4C003153B8 /* CoreVideo.framework */,
 				9CE1EED417BE0A4C003153B8 /* QuartzCore.framework */,
-				9CE1EECA17BE0166003153B8 /* opencv2.framework */,
 				9CE1EE9517BDFC8E003153B8 /* Foundation.framework */,
 				9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */,
+				5686717317BE54FA008D48DC /* opencv2.framework */,
 				9CE1EE9917BDFC8E003153B8 /* UIKit.framework */,
 				9CE1EEB417BDFC8E003153B8 /* XCTest.framework */,
 			);
@@ -206,6 +217,7 @@
 				9CE1EECD17BE018F003153B8 /* MyClasses */,
 				9CE1EECC17BE0183003153B8 /* ViewControllers */,
 				9CE1EEAD17BDFC8E003153B8 /* Images.xcassets */,
+				5686717617BE5B05008D48DC /* fakedata.csv */,
 				9CE1EE9C17BDFC8E003153B8 /* Supporting Files */,
 			);
 			path = Dashboard;
@@ -252,6 +264,8 @@
 		9CE1EECD17BE018F003153B8 /* MyClasses */ = {
 			isa = PBXGroup;
 			children = (
+				56E83B6317BE320500A9D326 /* Networking.h */,
+				56E83B6417BE320500A9D326 /* Networking.m */,
 			);
 			name = MyClasses;
 			sourceTree = "<group>";
@@ -350,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5686717717BE5B05008D48DC /* fakedata.csv in Resources */,
 				9CE1EEAE17BDFC8E003153B8 /* Images.xcassets in Resources */,
 				9CE1EEA017BDFC8E003153B8 /* InfoPlist.strings in Resources */,
 				9CE1EEA917BDFC8E003153B8 /* Main.storyboard in Resources */,
@@ -360,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5686717817BE5B05008D48DC /* fakedata.csv in Resources */,
 				9CE1EEBF17BDFC8E003153B8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56E83B5717BE1A2F00A9D326 /* main.m in Sources */,
+				56E83B6717BE320500A9D326 /* Networking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +399,7 @@
 				9CE1EEAC17BDFC8E003153B8 /* MainViewController.mm in Sources */,
 				9CE1EEA617BDFC8E003153B8 /* AppDelegate.m in Sources */,
 				9CE1EEA217BDFC8E003153B8 /* main.m in Sources */,
+				56E83B6517BE320500A9D326 /* Networking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +408,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CE1EEC117BDFC8E003153B8 /* DashboardTests.m in Sources */,
+				5686717917BE5B36008D48DC /* MainViewController.mm in Sources */,
+				56E83B6617BE320500A9D326 /* Networking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,11 +557,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/sdange/Projects/dashboard/Dashboard,
+					/Users/sdange/Projects/dashboard/Dashboard/,
+					/Users/jalexa/Documents/Work/Hackday/dashboard,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dashboard/Dashboard-Prefix.pch";
 				INFOPLIST_FILE = "Dashboard/Dashboard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -554,11 +576,13 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/sdange/Projects/dashboard/Dashboard,
+					/Users/sdange/Projects/dashboard/Dashboard/,
+					/Users/jalexa/Documents/Work/Hackday/dashboard,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dashboard/Dashboard-Prefix.pch";
 				INFOPLIST_FILE = "Dashboard/Dashboard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -572,6 +596,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/jalexa/Documents/Work/Hackday/dashboard,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dashboard/Dashboard-Prefix.pch";
@@ -594,6 +619,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/jalexa/Documents/Work/Hackday/dashboard,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dashboard/Dashboard-Prefix.pch";
@@ -614,6 +640,7 @@
 				56E83B5D17BE1A2F00A9D326 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CE1EE8D17BDFC8E003153B8 /* Build configuration list for PBXProject "Dashboard" */ = {
 			isa = XCConfigurationList;
