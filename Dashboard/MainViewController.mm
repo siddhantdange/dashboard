@@ -59,15 +59,18 @@
     threshold(image, image, 50.0, 255.0, CV_THRESH_BINARY);
     
     //morphological operators
-    dilate(image, image, Mat(3,3, CV_8U));
+    dilate(image, image, Mat(5,5, CV_8U));
     erode(image, image, Mat(3,3, CV_8U));
     
     vector<vector<cv::Point>>allContours;
     findContours(image, allContours, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
+    image = Mat::zeros(image.rows, image.cols, image.type());
     
     //qualify contours based on circular size to area
     if(allContours.size()){
-        float THRESHOLD_PERC = 0.8;
+        float THRESHOLD_PERC = 0.6;
+        
+        
         
         for(int i = 0; i < allContours.size(); i++){
             //circle area
@@ -76,16 +79,19 @@
             minEnclosingCircle(allContours[i], center, radius);
             float circleArea = CV_PI * radius * radius;
             
+            
             //contour area
             float cArea = contourArea(allContours[i]);
             
-            if(!cArea/circleArea > THRESHOLD_PERC){
+            if(cArea/circleArea > THRESHOLD_PERC){
+                circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
                 allContours.erase(allContours.begin() + i);
                 i--;
+                
             }
         }
         
-        drawContours(image, allContours, -1, Scalar(255.0, 255.0, 255.0), CV_FILLED);
+        //drawContours(image, allContours, -1, Scalar(255.0, 255.0, 255.0), CV_FILLED);
     }
     
     
