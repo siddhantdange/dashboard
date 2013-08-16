@@ -14,7 +14,7 @@
 		9CE1EEA217BDFC8E003153B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEA117BDFC8E003153B8 /* main.m */; };
 		9CE1EEA617BDFC8E003153B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEA517BDFC8E003153B8 /* AppDelegate.m */; };
 		9CE1EEA917BDFC8E003153B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE1EEA717BDFC8E003153B8 /* Main.storyboard */; };
-		9CE1EEAC17BDFC8E003153B8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEAB17BDFC8E003153B8 /* MainViewController.m */; };
+		9CE1EEAC17BDFC8E003153B8 /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEAB17BDFC8E003153B8 /* MainViewController.mm */; };
 		9CE1EEAE17BDFC8E003153B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CE1EEAD17BDFC8E003153B8 /* Images.xcassets */; };
 		9CE1EEB517BDFC8E003153B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EEB417BDFC8E003153B8 /* XCTest.framework */; };
 		9CE1EEB617BDFC8E003153B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
@@ -22,6 +22,13 @@
 		9CE1EEBF17BDFC8E003153B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CE1EEBD17BDFC8E003153B8 /* InfoPlist.strings */; };
 		9CE1EEC117BDFC8E003153B8 /* DashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEC017BDFC8E003153B8 /* DashboardTests.m */; };
 		9CE1EECB17BE0166003153B8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EECA17BE0166003153B8 /* opencv2.framework */; };
+		9CE1EED517BE0A4C003153B8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EECE17BE0A4C003153B8 /* Accelerate.framework */; };
+		9CE1EED617BE0A4C003153B8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EECF17BE0A4C003153B8 /* AssetsLibrary.framework */; };
+		9CE1EED717BE0A4C003153B8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EED017BE0A4C003153B8 /* AVFoundation.framework */; };
+		9CE1EED817BE0A4C003153B8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EED117BE0A4C003153B8 /* CoreImage.framework */; };
+		9CE1EED917BE0A4C003153B8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EED217BE0A4C003153B8 /* CoreMedia.framework */; };
+		9CE1EEDA17BE0A4C003153B8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EED317BE0A4C003153B8 /* CoreVideo.framework */; };
+		9CE1EEDB17BE0A4C003153B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EED417BE0A4C003153B8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +54,7 @@
 		9CE1EEA517BDFC8E003153B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9CE1EEA817BDFC8E003153B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CE1EEAA17BDFC8E003153B8 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		9CE1EEAB17BDFC8E003153B8 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9CE1EEAB17BDFC8E003153B8 /* MainViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		9CE1EEAD17BDFC8E003153B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9CE1EEB317BDFC8E003153B8 /* DashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE1EEB417BDFC8E003153B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -55,6 +62,13 @@
 		9CE1EEBE17BDFC8E003153B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CE1EEC017BDFC8E003153B8 /* DashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashboardTests.m; sourceTree = "<group>"; };
 		9CE1EECA17BE0166003153B8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		9CE1EECE17BE0A4C003153B8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		9CE1EECF17BE0A4C003153B8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9CE1EED017BE0A4C003153B8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9CE1EED117BE0A4C003153B8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		9CE1EED217BE0A4C003153B8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		9CE1EED317BE0A4C003153B8 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		9CE1EED417BE0A4C003153B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +76,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE1EED517BE0A4C003153B8 /* Accelerate.framework in Frameworks */,
+				9CE1EED617BE0A4C003153B8 /* AssetsLibrary.framework in Frameworks */,
+				9CE1EED717BE0A4C003153B8 /* AVFoundation.framework in Frameworks */,
+				9CE1EED817BE0A4C003153B8 /* CoreImage.framework in Frameworks */,
+				9CE1EED917BE0A4C003153B8 /* CoreMedia.framework in Frameworks */,
+				9CE1EEDA17BE0A4C003153B8 /* CoreVideo.framework in Frameworks */,
+				9CE1EEDB17BE0A4C003153B8 /* QuartzCore.framework in Frameworks */,
 				9CE1EE9817BDFC8E003153B8 /* CoreGraphics.framework in Frameworks */,
+				9CE1EE9617BDFC8E003153B8 /* Foundation.framework in Frameworks */,
 				9CE1EE9A17BDFC8E003153B8 /* UIKit.framework in Frameworks */,
 				9CE1EECB17BE0166003153B8 /* opencv2.framework in Frameworks */,
-				9CE1EE9617BDFC8E003153B8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +125,13 @@
 		9CE1EE9417BDFC8E003153B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CE1EECE17BE0A4C003153B8 /* Accelerate.framework */,
+				9CE1EECF17BE0A4C003153B8 /* AssetsLibrary.framework */,
+				9CE1EED017BE0A4C003153B8 /* AVFoundation.framework */,
+				9CE1EED117BE0A4C003153B8 /* CoreImage.framework */,
+				9CE1EED217BE0A4C003153B8 /* CoreMedia.framework */,
+				9CE1EED317BE0A4C003153B8 /* CoreVideo.framework */,
+				9CE1EED417BE0A4C003153B8 /* QuartzCore.framework */,
 				9CE1EECA17BE0166003153B8 /* opencv2.framework */,
 				9CE1EE9517BDFC8E003153B8 /* Foundation.framework */,
 				9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */,
@@ -160,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				9CE1EEAA17BDFC8E003153B8 /* MainViewController.h */,
-				9CE1EEAB17BDFC8E003153B8 /* MainViewController.m */,
+				9CE1EEAB17BDFC8E003153B8 /* MainViewController.mm */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -269,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CE1EEAC17BDFC8E003153B8 /* MainViewController.m in Sources */,
+				9CE1EEAC17BDFC8E003153B8 /* MainViewController.mm in Sources */,
 				9CE1EEA617BDFC8E003153B8 /* AppDelegate.m in Sources */,
 				9CE1EEA217BDFC8E003153B8 /* main.m in Sources */,
 			);

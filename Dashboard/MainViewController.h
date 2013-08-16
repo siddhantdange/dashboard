@@ -8,18 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-#ifdef __cplusplus
-
 #import <opencv2/opencv.hpp>
 #import <opencv2/highgui/cap_ios.h>
+
+#ifdef __cplusplus
 
 using namespace std;
 using namespace cv;
 
 #endif
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController <CvVideoCameraDelegate>
 
+@property (nonatomic, strong) IBOutlet UIImageView *cameraImageView;
 @property (nonatomic, strong) CvVideoCamera* videoCamera;
 
 @end
