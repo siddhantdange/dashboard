@@ -10,6 +10,9 @@
 
 @interface MainViewController ()
 
+@property (nonatomic, assign) Mat *meanImage;
+@property (nonatomic, assign) int frameCount;
+
 @end
 
 @implementation MainViewController
@@ -27,6 +30,10 @@
     self.videoCamera.defaultFPS = 30;
     self.videoCamera.grayscaleMode = NO;
     self.videoCamera.delegate = self;
+    
+    //set up mat
+    self.frameCount = 0;
+    self.meanImage = new Mat(352, 288, 0);
 }
 
 #pragma mark - Protocol CvVideoCameraDelegate
@@ -36,8 +43,51 @@
 - (void)processImage:(Mat&)origImage{
     //correct image
     cv::Mat image(origImage.rows, origImage.cols, origImage.type());
-    origImage.copyTo(image);
+    transpose(origImage, image);
     flip(image, image, 0); //flip around x-axis
+    cvtColor(image, image, CV_BGRA2RGB);
+    cvtColor(image, image, CV_RGB2HSV);
+    
+    replaceMatWithChannel(&image, @"H", 1, 0, 100);
+    
+    float denom = 7.14 + pow(2.718281,_frameCount-10);
+    float ALPHA = (1/denom) + 0.01;
+    *_meanImage = ALPHA * image + (1-ALPHA) * *_meanImage;
+    image -= *_meanImage;
+    
+    //TODO: use ML for threshold value
+    threshold(image, image, 50.0, 255.0, CV_THRESH_BINARY);
+    
+    //morphological operators
+    dilate(image, image, Mat(3,3, CV_8U));
+    erode(image, image, Mat(3,3, CV_8U));
+    
+    vector<vector<cv::Point>>allContours;
+    findContours(image, allContours, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
+    
+    //qualify contours based on circular size to area
+    if(allContours.size()){
+        float THRESHOLD_PERC = 0.8;
+        
+        for(int i = 0; i < allContours.size(); i++){
+            //circle area
+            Point2f center;
+            float radius;
+            minEnclosingCircle(allContours[i], center, radius);
+            float circleArea = CV_PI * radius * radius;
+            
+            //contour area
+            float cArea = contourArea(allContours[i]);
+            
+            if(!cArea/circleArea > THRESHOLD_PERC){
+                allContours.erase(allContours.begin() + i);
+                i--;
+            }
+        }
+        
+        drawContours(image, allContours, -1, Scalar(255.0, 255.0, 255.0), CV_FILLED);
+    }
+    
     
 //    
 //    //copy original image to workable image
@@ -69,6 +119,40 @@
 //  //  image.copyTo(origImage);
     image.copyTo(origImage);
     
+}
+
+//convert a 3-channel matrix to a specified single channel matrix
+void replaceMatWithChannel(cv::Mat *original, NSString *channel, float multiplier, float constant, int threshold){
+    int componentNum = 0;
+    int cCap = 255;
+    if([channel isEqual: @"H"] || [channel isEqual: @"R"]){
+        componentNum = 0;
+        cCap = 180;
+    } else if([channel isEqual:@"S"] || [channel isEqual: @"G"]){
+        componentNum = 1;
+    } else if([channel isEqual:@"V"] || [channel isEqual: @"B"]){
+        componentNum = 2;
+    }
+    
+    cv::Mat channelMat(original->rows, original->cols, CV_8U);
+    for (int i = 0; i < channelMat.rows; i++) {
+        for (int j = 0; j < channelMat.cols; j++) {
+            float realMultiplier = multiplier;
+            
+            if((int)original->at<Vec3b>(i,j)[componentNum] < threshold)
+                realMultiplier = 1/multiplier;
+            
+            int cVal = ((int)original->at<Vec3b>(i,j)[componentNum] * realMultiplier) + constant;
+            if(cVal > cCap)
+                cVal = cCap;
+            else if(cVal < 0)
+                cVal = 0;
+            channelMat.at<uchar>(i,j) = cVal;
+        }
+    }
+    
+    original->convertTo(*original, CV_8U);
+    channelMat.copyTo(*original);
 }
 
 #endif
