@@ -7,6 +7,10 @@
 //
 
 #import "MainViewController.h"
+#import "Networking.h"
+
+static NSString * const FIELDS_DELIM_STR = @"\n";
+static NSString * const FIELD_DELIM_STR = @",";
 
 @interface MainViewController ()
 
@@ -22,6 +26,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+#if TARGET_IPHONE_SIMULATOR
+    [self sendData];
+#else
     //set up camera
     self.videoCamera = [[CvVideoCamera alloc] initWithParentView:self.cameraImageView];
     self.videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionFront;
@@ -34,6 +41,53 @@
     //set up mat
     self.frameCount = 0;
     self.meanImage = new Mat(352, 288, 0);
+#endif
+}
+
+#pragma mark - Faker for if on simulator
+#define SCANNER_DEBUG_ON 1
+#if SCANNER_DEBUG_ON
+ #define NSLogS(__format__, ...) NSLog((__format__), ## __VA_ARGS__)
+#else
+ #define NSLogS(__format__, ...) do {} while (0)
+#endif
+- (void)sendData
+{
+    ConnectionAPI *conn = [[ConnectionAPI alloc] initConnectionToHost:kHostAddress port:kPort];
+    NSError *error = nil;
+    NSString *filename = @"fakedata";
+    NSString *fileext = @"csv";
+    NSString *pointsStr = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:filename ofType:fileext] encoding:NSASCIIStringEncoding error:&error];
+    if (!pointsStr) {
+        NSLog(@"[Error] Failed to read %@ - %@ %@", filename, error, [error userInfo]);
+        exit(1);
+    }
+    
+    NSScanner *scanner = [NSScanner scannerWithString:pointsStr];
+    //[scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@","]];
+    NSScanner *fieldScanner = nil;
+    NSString *scannedStr = nil;
+    float x, y;
+    int h;
+    NSLogS(@"starting scanning and sending data");
+    while ([scanner scanUpToString:FIELDS_DELIM_STR intoString:&scannedStr]) {
+        NSLogS(@"scanning string %@", scannedStr);
+//        [fieldScanner scanFloat:&x];
+////        [fieldScanner setScanLocation:fieldScanner.scanLocation+1];
+//        [fieldScanner scanFloat:&y];
+////        [fieldScanner setScanLocation:fieldScanner.scanLocation+1];
+//        [fieldScanner scanInt:&h];
+        NSArray *comp = [scannedStr componentsSeparatedByString:FIELD_DELIM_STR];
+        fieldScanner = [NSScanner scannerWithString:comp[0]];
+        [fieldScanner scanFloat:&x];
+        fieldScanner = [NSScanner scannerWithString:comp[1]];
+        [fieldScanner scanFloat:&y];
+        fieldScanner = [NSScanner scannerWithString:comp[2]];
+        [fieldScanner scanInt:&h];
+        NSLogS(@"sending (%f, %f, %d)", x, y, h);
+        [conn sendX:x Y:y H:h];
+    }
+    NSLogS(@"done scanning and sending data");
 }
 
 #pragma mark - Protocol CvVideoCameraDelegate
@@ -87,7 +141,6 @@
                 circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
                 allContours.erase(allContours.begin() + i);
                 i--;
-                
             }
         }
         
