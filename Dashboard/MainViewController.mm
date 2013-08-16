@@ -110,15 +110,20 @@ struct allContoursComparitor {
             Point2f center;
             float radius;
             minEnclosingCircle(allContours[0], center, radius);
-            //circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
             
             float circArea = M_PI * radius * radius;
             if(self.frameCount > 10 && self.frameCount < 20){
-                self.recentArea = ((self.recentArea * (self.frameCount - 11)) + circArea)/(float)(self.frameCount - 10);   
+                self.recentArea = ((self.recentArea * (self.frameCount - 11)) + circArea)/(float)(self.frameCount - 10);
             }
             
             if(abs(circArea/self.recentArea) > 0.9){
                 circle(image, center, radius, Scalar(255.0, 255.0, 255.0));
+                
+                float percX =  (center.x - self.x)/center.x;
+                float percY = (center.y - self.y)/center.y;
+                
+                self.x = center.x;
+                self.y = center.y;
             }
         }
     }
