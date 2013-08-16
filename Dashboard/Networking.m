@@ -7,14 +7,13 @@
 //
 
 #import "Networking.h"
+#import "GCDAsyncUdpSocket.h"
 
 NSString * kHostAddress = @"10.73.7.168";
 uint32_t kPort = 1234;
 
-@interface ConnectionAPI()
-@property (nonatomic, copy) NSString *host;
-@property (nonatomic, assign) uint32_t port;
-@property (nonatomic, strong) NSOutputStream *outputStream;
+@interface ConnectionAPI() <GCDAsyncUdpSocketDelegate>
+@property (nonatomic, strong) GCDAsyncUdpSocket *sock;
 @end
 
 @implementation ConnectionAPI
@@ -22,29 +21,18 @@ uint32_t kPort = 1234;
 - (id)initConnectionToHost:(NSString *)host port:(uint32_t)port
 {
     if (self=[super init]) {
-        self.host = host;
-        self.port = port;
-        
-//        CFReadStreamRef readStream;
-        CFWriteStreamRef writeStream;
-        
-        CFStringRef host = (__bridge CFStringRef)self.host;//CFSTR("10.73.7.168");
-        
-        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, host, self.port, /*&readStream*/NULL, &writeStream);
-        
-//        NSInputStream *inputStream = (__bridge NSInputStream *)readStream;
-        self.outputStream = (__bridge NSOutputStream *)writeStream;
-        
-//        [inputStream setDelegate:self];
-        [self.outputStream setDelegate:self];
-        
-//        [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        [self.outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        
-//        [inputStream open];
-        [self.outputStream open];
+        self.sock = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+        NSError *error = nil;
+        if (![self.sock connectToHost:host onPort:port error:&error]) {
+            NSLog(@"[Error] Connection didn't go - %@ %@", error, [error userInfo]);
+        }
     }
     return self;
+}
+
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didConnectToAddress:(NSData *)address
+{
+    NSLog(@"congrats! connected to %@", address);
 }
 
 - (void)sendX:(float)x Y:(float)y H:(unsigned short)h
@@ -52,53 +40,17 @@ uint32_t kPort = 1234;
     NSLog(@"sending data: (%f, %f, %d)", x, y, h);
     NSString *dataStr  = [NSString stringWithFormat:@"%f,%f,%d\n", x, y, h];
     NSData *data = [[NSData alloc] initWithData:[dataStr dataUsingEncoding:NSASCIIStringEncoding]];
-    [self.outputStream write:[data bytes] maxLength:[data length]];
+    //[self.outputStream write:[data bytes] maxLength:[data length]];
+    [self.sock sendData:data withTimeout:10 tag:0];
 }
 
-- (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didSendDataWithTag:(long)tag
 {
-    NSLog(@"stream event %d", streamEvent);
-    
-    switch (streamEvent) {
-            
-        case NSStreamEventOpenCompleted:
-            NSLog(@"Stream opened");
-            break;
-            
-        case NSStreamEventHasBytesAvailable:
-//            if (theStream == inputStream) {
-//                
-//                uint8_t buffer[1024];
-//                int len;
-//                
-//                while ([inputStream hasBytesAvailable]) {
-//                    len = [inputStream read:buffer maxLength:sizeof(buffer)];
-//                    if (len > 0) {
-//                        
-//                        NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
-//                        
-//                        if (nil != output) {
-//                            NSLog(@"server said: %@", output);
-//                            [self messageReceived:output];
-//                        }
-//                    }
-//                }
-//            }
-            break;
-            
-        case NSStreamEventErrorOccurred:
-            NSLog(@"Can't connect to server");
-            break;
-            
-        case NSStreamEventEndEncountered:
-            NSLog(@"event end encountered");
-            [theStream close];
-            [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-            break;
-            
-        default:
-            NSLog(@"Unknown event");
-    }
+    NSLog(@"sent data with tag %ld", tag);
+}
+- (void)udpSocketDidClose:(GCDAsyncUdpSocket *)sock withError:(NSError *)error
+{
+    NSLog(@"socket closed with error %@ %@", error, [error userInfo]);
 }
 
 @end
