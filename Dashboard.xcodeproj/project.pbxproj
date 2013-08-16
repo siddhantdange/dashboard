@@ -14,13 +14,14 @@
 		9CE1EEA217BDFC8E003153B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEA117BDFC8E003153B8 /* main.m */; };
 		9CE1EEA617BDFC8E003153B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEA517BDFC8E003153B8 /* AppDelegate.m */; };
 		9CE1EEA917BDFC8E003153B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE1EEA717BDFC8E003153B8 /* Main.storyboard */; };
-		9CE1EEAC17BDFC8E003153B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEAB17BDFC8E003153B8 /* ViewController.m */; };
+		9CE1EEAC17BDFC8E003153B8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEAB17BDFC8E003153B8 /* MainViewController.m */; };
 		9CE1EEAE17BDFC8E003153B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CE1EEAD17BDFC8E003153B8 /* Images.xcassets */; };
 		9CE1EEB517BDFC8E003153B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EEB417BDFC8E003153B8 /* XCTest.framework */; };
 		9CE1EEB617BDFC8E003153B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
 		9CE1EEB717BDFC8E003153B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9917BDFC8E003153B8 /* UIKit.framework */; };
 		9CE1EEBF17BDFC8E003153B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CE1EEBD17BDFC8E003153B8 /* InfoPlist.strings */; };
 		9CE1EEC117BDFC8E003153B8 /* DashboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1EEC017BDFC8E003153B8 /* DashboardTests.m */; };
+		9CE1EECB17BE0166003153B8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EECA17BE0166003153B8 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +46,15 @@
 		9CE1EEA417BDFC8E003153B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9CE1EEA517BDFC8E003153B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9CE1EEA817BDFC8E003153B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9CE1EEAA17BDFC8E003153B8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9CE1EEAB17BDFC8E003153B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9CE1EEAA17BDFC8E003153B8 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9CE1EEAB17BDFC8E003153B8 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		9CE1EEAD17BDFC8E003153B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9CE1EEB317BDFC8E003153B8 /* DashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DashboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE1EEB417BDFC8E003153B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9CE1EEBC17BDFC8E003153B8 /* DashboardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DashboardTests-Info.plist"; sourceTree = "<group>"; };
 		9CE1EEBE17BDFC8E003153B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CE1EEC017BDFC8E003153B8 /* DashboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashboardTests.m; sourceTree = "<group>"; };
+		9CE1EECA17BE0166003153B8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			files = (
 				9CE1EE9817BDFC8E003153B8 /* CoreGraphics.framework in Frameworks */,
 				9CE1EE9A17BDFC8E003153B8 /* UIKit.framework in Frameworks */,
+				9CE1EECB17BE0166003153B8 /* opencv2.framework in Frameworks */,
 				9CE1EE9617BDFC8E003153B8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +104,7 @@
 		9CE1EE9417BDFC8E003153B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CE1EECA17BE0166003153B8 /* opencv2.framework */,
 				9CE1EE9517BDFC8E003153B8 /* Foundation.framework */,
 				9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */,
 				9CE1EE9917BDFC8E003153B8 /* UIKit.framework */,
@@ -112,11 +116,11 @@
 		9CE1EE9B17BDFC8E003153B8 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				9CE1EEA717BDFC8E003153B8 /* Main.storyboard */,
 				9CE1EEA417BDFC8E003153B8 /* AppDelegate.h */,
 				9CE1EEA517BDFC8E003153B8 /* AppDelegate.m */,
-				9CE1EEA717BDFC8E003153B8 /* Main.storyboard */,
-				9CE1EEAA17BDFC8E003153B8 /* ViewController.h */,
-				9CE1EEAB17BDFC8E003153B8 /* ViewController.m */,
+				9CE1EECD17BE018F003153B8 /* MyClasses */,
+				9CE1EECC17BE0183003153B8 /* ViewControllers */,
 				9CE1EEAD17BDFC8E003153B8 /* Images.xcassets */,
 				9CE1EE9C17BDFC8E003153B8 /* Supporting Files */,
 			);
@@ -150,6 +154,22 @@
 				9CE1EEBD17BDFC8E003153B8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9CE1EECC17BE0183003153B8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9CE1EEAA17BDFC8E003153B8 /* MainViewController.h */,
+				9CE1EEAB17BDFC8E003153B8 /* MainViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9CE1EECD17BE018F003153B8 /* MyClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MyClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CE1EEAC17BDFC8E003153B8 /* ViewController.m in Sources */,
+				9CE1EEAC17BDFC8E003153B8 /* MainViewController.m in Sources */,
 				9CE1EEA617BDFC8E003153B8 /* AppDelegate.m in Sources */,
 				9CE1EEA217BDFC8E003153B8 /* main.m in Sources */,
 			);
@@ -374,6 +394,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sdange/Projects/dashboard/Dashboard,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dashboard/Dashboard-Prefix.pch";
 				INFOPLIST_FILE = "Dashboard/Dashboard-Info.plist";
@@ -387,6 +411,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sdange/Projects/dashboard/Dashboard,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Dashboard/Dashboard-Prefix.pch";
 				INFOPLIST_FILE = "Dashboard/Dashboard-Info.plist";
