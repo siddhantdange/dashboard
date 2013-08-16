@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56E83B5417BE1A2F00A9D326 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
+		56E83B5717BE1A2F00A9D326 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E83B5617BE1A2F00A9D326 /* main.m */; };
+		56E83B5B17BE1A2F00A9D326 /* fakepoints.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56E83B5A17BE1A2F00A9D326 /* fakepoints.1 */; };
+		56E83B6017BE1B8C00A9D326 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E83B5F17BE1B8C00A9D326 /* CoreGraphics.framework */; };
+		56E83B6217BE1B9100A9D326 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E83B6117BE1B9100A9D326 /* CoreFoundation.framework */; };
 		9CE1EE9617BDFC8E003153B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9517BDFC8E003153B8 /* Foundation.framework */; };
 		9CE1EE9817BDFC8E003153B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */; };
 		9CE1EE9A17BDFC8E003153B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE1EE9917BDFC8E003153B8 /* UIKit.framework */; };
@@ -41,7 +46,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		56E83B5117BE1A2F00A9D326 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				56E83B5B17BE1A2F00A9D326 /* fakepoints.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		56E83B5317BE1A2F00A9D326 /* fakepoints */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fakepoints; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E83B5617BE1A2F00A9D326 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56E83B5917BE1A2F00A9D326 /* fakepoints-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fakepoints-Prefix.pch"; sourceTree = "<group>"; };
+		56E83B5A17BE1A2F00A9D326 /* fakepoints.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = fakepoints.1; sourceTree = "<group>"; };
+		56E83B5F17BE1B8C00A9D326 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		56E83B6117BE1B9100A9D326 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		9CE1EE9217BDFC8E003153B8 /* Dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE1EE9517BDFC8E003153B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CE1EE9717BDFC8E003153B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,6 +96,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		56E83B5017BE1A2F00A9D326 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E83B6217BE1B9100A9D326 /* CoreFoundation.framework in Frameworks */,
+				56E83B6017BE1B8C00A9D326 /* CoreGraphics.framework in Frameworks */,
+				56E83B5417BE1A2F00A9D326 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CE1EE8F17BDFC8E003153B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,11 +137,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56E83B5517BE1A2F00A9D326 /* fakepoints */ = {
+			isa = PBXGroup;
+			children = (
+				56E83B5617BE1A2F00A9D326 /* main.m */,
+				56E83B5A17BE1A2F00A9D326 /* fakepoints.1 */,
+				56E83B5817BE1A2F00A9D326 /* Supporting Files */,
+			);
+			path = fakepoints;
+			sourceTree = "<group>";
+		};
+		56E83B5817BE1A2F00A9D326 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56E83B5917BE1A2F00A9D326 /* fakepoints-Prefix.pch */,
+				56E83B6117BE1B9100A9D326 /* CoreFoundation.framework */,
+				56E83B5F17BE1B8C00A9D326 /* CoreGraphics.framework */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		9CE1EE8917BDFC8E003153B8 = {
 			isa = PBXGroup;
 			children = (
 				9CE1EE9B17BDFC8E003153B8 /* Dashboard */,
 				9CE1EEBA17BDFC8E003153B8 /* DashboardTests */,
+				56E83B5517BE1A2F00A9D326 /* fakepoints */,
 				9CE1EE9417BDFC8E003153B8 /* Frameworks */,
 				9CE1EE9317BDFC8E003153B8 /* Products */,
 			);
@@ -118,6 +173,7 @@
 			children = (
 				9CE1EE9217BDFC8E003153B8 /* Dashboard.app */,
 				9CE1EEB317BDFC8E003153B8 /* DashboardTests.xctest */,
+				56E83B5317BE1A2F00A9D326 /* fakepoints */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +259,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		56E83B5217BE1A2F00A9D326 /* fakepoints */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56E83B5E17BE1A2F00A9D326 /* Build configuration list for PBXNativeTarget "fakepoints" */;
+			buildPhases = (
+				56E83B4F17BE1A2F00A9D326 /* Sources */,
+				56E83B5017BE1A2F00A9D326 /* Frameworks */,
+				56E83B5117BE1A2F00A9D326 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fakepoints;
+			productName = fakepoints;
+			productReference = 56E83B5317BE1A2F00A9D326 /* fakepoints */;
+			productType = "com.apple.product-type.tool";
+		};
 		9CE1EE9117BDFC8E003153B8 /* Dashboard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CE1EEC417BDFC8E003153B8 /* Build configuration list for PBXNativeTarget "Dashboard" */;
@@ -267,6 +340,7 @@
 			targets = (
 				9CE1EE9117BDFC8E003153B8 /* Dashboard */,
 				9CE1EEB217BDFC8E003153B8 /* DashboardTests */,
+				56E83B5217BE1A2F00A9D326 /* fakepoints */,
 			);
 		};
 /* End PBXProject section */
@@ -293,6 +367,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		56E83B4F17BE1A2F00A9D326 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E83B5717BE1A2F00A9D326 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9CE1EE8E17BDFC8E003153B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +431,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		56E83B5C17BE1A2F00A9D326 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fakepoints/fakepoints-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		56E83B5D17BE1A2F00A9D326 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "fakepoints/fakepoints-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		9CE1EEC217BDFC8E003153B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -494,6 +607,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		56E83B5E17BE1A2F00A9D326 /* Build configuration list for PBXNativeTarget "fakepoints" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56E83B5C17BE1A2F00A9D326 /* Debug */,
+				56E83B5D17BE1A2F00A9D326 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9CE1EE8D17BDFC8E003153B8 /* Build configuration list for PBXProject "Dashboard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -510,6 +631,7 @@
 				9CE1EEC617BDFC8E003153B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CE1EEC717BDFC8E003153B8 /* Build configuration list for PBXNativeTarget "DashboardTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +640,7 @@
 				9CE1EEC917BDFC8E003153B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
